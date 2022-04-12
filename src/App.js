@@ -14,24 +14,28 @@ function App() {
   // if not signed in, return early with sign-in prompt
   if (!window.walletConnection.isSignedIn()) {
     return (
+
+
       <main>
-        <h1>Welcome to Hello Name Dapp!</h1>
-        <p>
-          To make use of the Dapp. You would need to sign in to the NEAR blockchain. The button
+         <h1  style={{ textAlign: 'center', marginTop: '2.5em', color: 'green' }}>Welcome to Hello Name Dapp!</h1>
+        <p style={{textAlign:'center', color: 'white', fontFamily:'lato'}}>
+          To make uses of the Dapp. You would need to sign in to the NEAR blockchain. The button
           below will sign you in using NEAR Wallet.
-        </p>
-        <p>
+        <br/>
           By default, when your app runs in "development" mode, it connects
           to a test network ("testnet") wallet. This works just like the main
           network ("mainnet") wallet, but the NEAR Tokens on testnet aren't
           convertible to other currencies – they're just for testing!
-        </p>
-        <p>
+        <br/>
           Go ahead and click the button below to try it out:
         </p>
-        <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
+        <p style={{ textAlign: 'center', marginTop: '2.5em'}}>
           <button onClick={login}>Sign in</button>
         </p>
+
+
+
+
       </main>
     )
   }
@@ -58,6 +62,8 @@ function App() {
                                                   // pass the value that the user entered in the greeting field
                                                   name: newGreeting
                                                   })
+                                                 
+                                             
                                             } catch (e) {
                                               alert(
                                                 'Something went wrong! ' +
@@ -69,6 +75,7 @@ function App() {
                                               // re-enable the form, whether the call succeeded or failed
                                               fieldset.disabled = false;
                                             }
+                                            
                                             // update local `greeting` variable to match persisted value
                                             set_word(newGreeting);
 
@@ -82,14 +89,15 @@ function App() {
                                             }, 22555);
               }}>
               <fieldset id="fieldset">
-                <label htmlFor="greeting" style={{ display: 'block', color: 'var(--gray)', marginBottom: '0.5em'}}>Input your name:</label>
-                <div style={{ display: 'flex' }}>
+              <div style={{ display: 'flex', padding:'25px 250px 25px 250px'}}>
+                <label htmlFor="greeting" style={{ display: 'block', color: 'white', fontWeight: 'bold', marginBottom: '0.5em', fontSize: '20px'}}>Input your name: &nbsp;</label>
+
                   <input autoComplete="off" onChange={(e) => setButtonDisabled(e.target.value === word)} placeholder={`Hello ${word}!`} id="greeting"  style={{ flex: 1 }}/>
-                  <button disabled={buttonDisabled} style={{ borderRadius: '0 5px 5px 0' }}>Save</button>
+                  <button disabled={buttonDisabled} style={{ borderRadius: '0 5px 5px 0', backgroundColor: 'white', color: 'black' }}>Save</button>
                 </div>
               </fieldset>
             </form>
-            <p>Hey! {word} &#128075; This Hello World dapp! saves your name on the Near Blockchain!</p>
+            <p style={{ textAlign: 'center', marginTop: '1.5em'}}> Hey! {word} &#128075; This Hello World dapp! saves your name on the Near Blockchain!</p>
           </main>
             {showNotification && <Notification />}
           </>

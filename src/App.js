@@ -58,7 +58,7 @@ function App() {
 
                                             try {
                                                   // make an update call to the smart contract
-                                                  await window.contract.input_name({
+                                                  await window.contract.settermth({
                                                   // pass the value that the user entered in the greeting field
                                                   name: newGreeting
                                                   })

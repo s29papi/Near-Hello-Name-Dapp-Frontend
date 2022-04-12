@@ -1,4 +1,4 @@
-export const CONTRACT_NAME = 'hellowaheed.testnet';
+export const CONTRACT_NAME = 'hellowaheed.testnet ';
 
 export const config = {
   networkId: "testnet",
